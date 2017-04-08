@@ -8,6 +8,8 @@ import java.util.Map;
  * Created by Oscar on 08/04/2017.
  */
 public class MergeSort {
+
+    // TODO fix with generics
     public static <T extends Comparable> void sort(T[] a) {
         T[] helper = new ArrayList;
         sort(a, 0, a.length - 1, helper);
