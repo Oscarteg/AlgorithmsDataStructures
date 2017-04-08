@@ -1,5 +1,6 @@
 package main.algorithms;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -7,13 +8,13 @@ import java.util.Map;
  * Created by Oscar on 08/04/2017.
  */
 public class MergeSort {
-    public static void sort(int[] a) {
-        int[] helper = new int[a.length];
+    public static <T extends Comparable> void sort(T[] a) {
+        T[] helper = new ArrayList;
         sort(a, 0, a.length - 1, helper);
         Map map = new HashMap<>();
     }
 
-    private static void sort(int[] a, int lo, int hi, int[] helper) {
+    private static <T extends Comparable> void sort(T[] a, int lo, int hi, T[] helper) {
         if (lo >= hi) return;
         int mid = lo + (hi - lo) / 2;
         sort(a, lo, mid, helper);
@@ -21,9 +22,11 @@ public class MergeSort {
         merge(a, lo, mid, hi, helper);
     }
 
-    private static void merge(int[] a, int lo, int mid, int hi, int[] helper) {
+    private static <T extends Comparable> void merge(T[] a, int lo, int mid, int hi, T[] helper) {
+        for (int i = lo; i <= hi; i++) {
+            helper[i] = a[i];
+        }
 
-        for (int i = lo; i <= hi; i++) helper[i] = a[i];
         int i = lo;
         int j = mid + 1;
         for (int k = lo; k <= hi; k++) {
@@ -31,7 +34,7 @@ public class MergeSort {
                 a[k] = helper[j++];
             else if (j > hi)
                 a[k] = helper[i++];
-            else if (helper[i] <= helper[j])
+            else if (helper[i].compareTo(helper[j]) <= 1)
                 a[k] = helper[i++];
             else
                 a[k] = helper[j++];

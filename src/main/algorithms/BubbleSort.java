@@ -38,7 +38,9 @@ public class BubbleSort {
                 }
             }
             // if any swapping has not occurred in the last iteration, we can say it is sorted now
-            if (sorted) break;
+            if (sorted) {
+                break;
+            }
         }
     }
 
