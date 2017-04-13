@@ -12,36 +12,36 @@ public class AVLTree<K extends Comparable> implements Tree<K> {
 
     private Node root;
 
-    private Node put(Node x, K k) {
-        if (x == null) {
-            return new Node(k);
+    private Node put(Node node, K value) {
+        if (node == null) {
+            return new Node(value);
         }
-        if (x.value.compareTo(k) > 0) {
-            x.left = put(x.left, k);
-        } else if (x.value.compareTo(k) < 0) {
-            x.right = put(x.right, k);
+        if (node.value.compareTo(value) > 0) {
+            node.left = put(node.left, value);
+        } else if (node.value.compareTo(value) < 0) {
+            node.right = put(node.right, value);
 
         }
-        int balance = height(x.left) - height(x.right);
+        int balance = height(node.left) - height(node.right);
         if (balance > 1) {
-            if (height(x.left.left) >= height(x.left.right)) {
-                x = rotateRight(x);
+            if (height(node.left.left) >= height(node.left.right)) {
+                node = rotateRight(node);
             } else {
-                x.left = rotateLeft(x.left);
-                x = rotateRight(x);
+                node.left = rotateLeft(node.left);
+                node = rotateRight(node);
             }
         } else if (balance < -1) {
-            if (height(x.right.right) >= height(x.right.left)) {
-                x = rotateLeft(x);
+            if (height(node.right.right) >= height(node.right.left)) {
+                node = rotateLeft(node);
             } else {
-                x.right = rotateLeft(x.right);
-                x = rotateLeft(x);
+                node.right = rotateLeft(node.right);
+                node = rotateLeft(node);
             }
         } else {
-            x.height = Math.max(height(x.left), height(x.right)) + 1;
-            x.size = size(x.left) + size(x.right) + 1;
+            node.height = Math.max(height(node.left), height(node.right)) + 1;
+            node.size = size(node.left) + size(node.right) + 1;
         }
-        return x;
+        return node;
     }
 
     private Node rotateLeft(Node x) {
