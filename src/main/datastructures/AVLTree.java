@@ -1,5 +1,7 @@
 package main.datastructures;
 
+import main.utils.Node;
+
 /**
  * Created by Oscar on 08/04/2017.
  * balanced Binary search tree
@@ -16,60 +18,60 @@ public class AVLTree<K extends Comparable> implements Tree<K> {
         if (node == null) {
             return new Node(value);
         }
-        if (node.value.compareTo(value) > 0) {
-            node.left = put(node.left, value);
-        } else if (node.value.compareTo(value) < 0) {
-            node.right = put(node.right, value);
+        if (node.getValue().compareTo(value) > 0) {
+            node.setLeft(put(node.getLeft(), value));
+        } else if (node.getValue().compareTo(value) < 0) {
+            node.setRight(put(node.getRight(), value));
 
         }
-        int balance = height(node.left) - height(node.right);
+        int balance = height(node.getLeft()) - height(node.getRight());
         if (balance > 1) {
-            if (height(node.left.left) >= height(node.left.right)) {
+            if (height(node.getLeft().getLeft()) >= height(node.getLeft().getRight())) {
                 node = rotateRight(node);
             } else {
-                node.left = rotateLeft(node.left);
+                node.setRight(rotateLeft(node.getLeft()));
                 node = rotateRight(node);
             }
         } else if (balance < -1) {
-            if (height(node.right.right) >= height(node.right.left)) {
+            if (height(node.getRight().getRight()) >= height(node.getRight().getLeft())) {
                 node = rotateLeft(node);
             } else {
-                node.right = rotateLeft(node.right);
+                node.setRight(rotateLeft(node.getRight()));
                 node = rotateLeft(node);
             }
         } else {
-            node.height = Math.max(height(node.left), height(node.right)) + 1;
-            node.size = size(node.left) + size(node.right) + 1;
+            node.setHeight(Math.max(height(node.getLeft()), height(node.getRight())) + 1);
+            node.setSize(size(node.getLeft()) + size(node.getRight()) + 1);
         }
         return node;
     }
 
     private Node rotateLeft(Node x) {
-        Node newRoot = x.right;
-        x.right = newRoot.left;
-        newRoot.left = x;
-        x.height = Math.max(height(x.left), height(x.right)) + 1;
-        newRoot.height = Math.max(height(newRoot.left), height(newRoot.right)) + 1;
+        Node newRoot = x.getRight();
+        x.setRight(newRoot.getLeft());
+        newRoot.setLeft(x);
+        x.setHeight(Math.max(height(x.getLeft()), height(x.getRight())) + 1);
+        newRoot.setHeight(Math.max(height(newRoot.getLeft()), height(newRoot.getRight())) + 1);
         return newRoot;
     }
 
 
     private Node rotateRight(Node x) {
-        Node newRoot = x.left;
-        x.left = newRoot.right;
-        newRoot.right = x;
-        x.height = Math.max(height(x.left), height(x.right)) + 1;
-        newRoot.height = Math.max(height(newRoot.left), height(newRoot.right)) + 1;
+        Node newRoot = x.getLeft();
+        x.setLeft(newRoot.getRight());
+        newRoot.setRight(x);
+        x.setHeight(Math.max(height(x.getLeft()), height(x.getRight())) + 1);
+        newRoot.setHeight(Math.max(height(newRoot.getLeft()), height(newRoot.getRight())) + 1);
         return newRoot;
     }
 
 
     private int size(Node x) {
-        return x == null ? 0 : x.size;
+        return x == null ? 0 : x.getSize();
     }
 
     private int height(Node x) {
-        return x == null ? -1 : x.height;
+        return x == null ? -1 : x.getHeight();
     }
 
     @Override
@@ -86,13 +88,13 @@ public class AVLTree<K extends Comparable> implements Tree<K> {
         if (x == null) {
             return null;
         }
-        if (x.value.equals(k)) {
+        if (x.getValue().equals(k)) {
             return x;
         }
-        if (x.value.compareTo(k) > 0) {
-            return find(x.left, k);
+        if (x.getValue().compareTo(k) > 0) {
+            return find(x.getLeft(), k);
         } else {
-            return find(x.right, k);
+            return find(x.getRight(), k);
         }
     }
 
@@ -101,7 +103,11 @@ public class AVLTree<K extends Comparable> implements Tree<K> {
 
     }
 
-    private class Node {
+    public Node getRoot() {
+        return root;
+    }
+
+/*  private class Node {
         K value;
         int height, size;
         Node left, right;
@@ -109,5 +115,5 @@ public class AVLTree<K extends Comparable> implements Tree<K> {
         public Node(K k) {
             this.value = k;
         }
-    }
+    }*/
 }

@@ -14,27 +14,27 @@ public class TreeTraversals {
         if (root == null) {
             return;
         }
-        postOrder(root.left);
-        postOrder(root.right);
-        System.out.print(root.val + " ");
+        postOrder(root.getLeft());
+        postOrder(root.getRight());
+        System.out.print(root.getValue() + " ");
     }
 
     public static void preOrder(Node root) {
         if (root == null) {
             return;
         }
-        System.out.print(root.val + " ");
-        preOrder(root.left);
-        preOrder(root.right);
+        System.out.print(root.getValue() + " ");
+        preOrder(root.getLeft());
+        preOrder(root.getRight());
     }
 
     public static void inOrder(Node root) {
         if (root == null) {
             return;
         }
-        inOrder(root.left);
-        System.out.print(root.val + " ");
-        inOrder(root.right);
+        inOrder(root.getLeft());
+        System.out.print(root.getValue() + " ");
+        inOrder(root.getRight());
     }
 
     public void levelOrder(Node root) {
@@ -47,11 +47,11 @@ public class TreeTraversals {
         while (!q.isEmpty()) {
             Node x = q.remove();
             level--;
-            if (x.left != null) {
-                q.add(x.left);
+            if (x.getLeft() != null) {
+                q.add(x.getLeft());
             }
-            if (x.right != null) {
-                q.add(x.right);
+            if (x.getRight() != null) {
+                q.add(x.getRight());
             }
 
             if (level == 0 && !q.isEmpty()) {
@@ -60,4 +60,31 @@ public class TreeTraversals {
             }
         }
     }
+
+    public static void print(Node rootNode) {
+        System.out.println(".");
+        _print(rootNode, 0);
+    }
+
+    private static void _print(Node node, final int indentation) {
+        if(null == node) {
+            return;
+        }
+
+        final String type;
+        if(indentation == 0)
+            type = "Root";
+        else
+            type = "Child";
+
+        String indent = "";
+        for(int i = 0; i < indentation; i++)
+            indent += "    ";
+
+        System.out.printf("%s└── %s node with value '%s'\n", indent, type, node.getValue());
+
+        _print(node.getLeft(), indentation + 1);
+        _print(node.getRight(), indentation + 1);
+    }
+
 }
