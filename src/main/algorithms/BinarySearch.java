@@ -8,17 +8,17 @@ public class BinarySearch {
      * This is binary search algorithm, Time complexity is O(lgN) and does use extra space.
      * This finds any occurrence of given key
      */
-    int search(int[] a, int key) {
+    public static <T extends Comparable> int search(T[] array, int key) {
         int lo = 0;
-        int hi = a.length - 1;
+        int hi = array.length - 1;
         while (lo <= hi) {
             int mid = lo + (hi - lo) / 2;
 
-            if (a[mid] == key) {
+            if (array[mid].compareTo(key) == 0) {
                 return mid; // key found
             }
 
-            if (a[mid] < key) {
+            if (array[mid].compareTo(key) > 0) {
                 lo = mid + 1;
             } else {
                 hi = mid - 1;
@@ -31,17 +31,17 @@ public class BinarySearch {
     /**
      * When there are duplicates, this finds the first occurrence of the key
      */
-    int searchLowerBound(int[] a, int key) {
+    public static <T extends Comparable> int searchLowerBound(T[] array, int key) {
         int lo = 0;
-        int hi = a.length - 1;
+        int hi = array.length - 1;
         while (lo <= hi) {
             int mid = lo + (hi - lo) / 2;
 
-            if (a[mid] == key && (mid == 0 || a[mid - 1] != key)) {
+            if ((array[mid].compareTo(key) == 0) && (mid == 0 || array[mid - 1].compareTo(key) != 0)) {
                 return mid; // key found
             }
 
-            if (a[mid] < key) {
+            if (array[mid].compareTo(key) > 0) {
                 lo = mid + 1; // pay attention
             } else {
                 hi = mid - 1;

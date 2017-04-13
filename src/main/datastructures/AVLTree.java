@@ -46,42 +46,42 @@ public class AVLTree<K extends Comparable> implements Tree<K> {
         return node;
     }
 
-    private Node rotateLeft(Node x) {
-        Node newRoot = x.getRight();
-        x.setRight(newRoot.getLeft());
-        newRoot.setLeft(x);
-        x.setHeight(Math.max(height(x.getLeft()), height(x.getRight())) + 1);
+    private Node rotateLeft(Node node) {
+        Node newRoot = node.getRight();
+        node.setRight(newRoot.getLeft());
+        newRoot.setLeft(node);
+        node.setHeight(Math.max(height(node.getLeft()), height(node.getRight())) + 1);
         newRoot.setHeight(Math.max(height(newRoot.getLeft()), height(newRoot.getRight())) + 1);
         return newRoot;
     }
 
 
-    private Node rotateRight(Node x) {
-        Node newRoot = x.getLeft();
-        x.setLeft(newRoot.getRight());
-        newRoot.setRight(x);
-        x.setHeight(Math.max(height(x.getLeft()), height(x.getRight())) + 1);
+    private Node rotateRight(Node node) {
+        Node newRoot = node.getLeft();
+        node.setLeft(newRoot.getRight());
+        newRoot.setRight(node);
+        node.setHeight(Math.max(height(node.getLeft()), height(node.getRight())) + 1);
         newRoot.setHeight(Math.max(height(newRoot.getLeft()), height(newRoot.getRight())) + 1);
         return newRoot;
     }
 
 
-    private int size(Node x) {
-        return x == null ? 0 : x.getSize();
+    private int size(Node node) {
+        return node == null ? 0 : node.getSize();
     }
 
-    private int height(Node x) {
-        return x == null ? -1 : x.getHeight();
-    }
-
-    @Override
-    public void insert(K k) {
-        root = put(root, k);
+    private int height(Node node) {
+        return node == null ? -1 : node.getHeight();
     }
 
     @Override
-    public boolean search(K k) {
-        return find(root, k) != null;
+    public void insert(K key) {
+        root = put(root, key);
+    }
+
+    @Override
+    public boolean search(K key) {
+        return find(root, key) != null;
     }
 
     private Node find(Node x, K k) {
@@ -106,14 +106,4 @@ public class AVLTree<K extends Comparable> implements Tree<K> {
     public Node getRoot() {
         return root;
     }
-
-/*  private class Node {
-        K value;
-        int height, size;
-        Node left, right;
-
-        public Node(K k) {
-            this.value = k;
-        }
-    }*/
 }

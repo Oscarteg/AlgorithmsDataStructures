@@ -1,5 +1,6 @@
 package test;
 
+import jdk.nashorn.internal.ir.annotations.Ignore;
 import main.algorithms.TreeTraversals;
 import main.datastructures.AVLTree;
 import org.junit.jupiter.api.AfterEach;
@@ -24,13 +25,22 @@ public class AVLTreeTest {
         avlTree.insert(25);
         avlTree.insert(30);
         avlTree.insert(50);
+
     }
 
     @Test
     public void testAVLTree() {
+        assertEquals(this.avlTree.getRoot().getValue(), 25);
+        assertEquals(this.avlTree.getRoot().getLeft().getValue(), 10);
+        assertEquals(this.avlTree.getRoot().getLeft().getLeft().getValue(), 5);
+        assertEquals(this.avlTree.getRoot().getLeft().getRight().getValue(), 15);
+
+        assertEquals(this.avlTree.getRoot().getRight().getValue(), 30);
+        assertEquals(this.avlTree.getRoot().getRight().getRight().getValue(), 50);
+
     }
 
-    @AfterEach
+    @Ignore @AfterEach
     public void printTree() {
         TreeTraversals.print(this.avlTree.getRoot());
     }
