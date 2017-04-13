@@ -11,7 +11,9 @@ public class DoubleLinkedList<E> {
     private Node tail; // the last element
 
     public void add(E element) {
-        if (element == null) throw new AssertionError();
+        if (element == null) {
+            throw new AssertionError();
+        }
 
         // tail and head are the same node when list has only one item
         if (head == null) {

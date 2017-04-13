@@ -60,7 +60,7 @@ public class HeapSort {
         }
     }
 
-    public void heapSort(int[] a0) {
+    public void sort(int[] a0) {
         array = a0;
 
         // build maximum heap

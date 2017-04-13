@@ -1,5 +1,7 @@
 package main.algorithms;
 
+import main.utils.SwapElementInArray;
+
 /**
  * Created by Oscar on 08/04/2017.
  */
@@ -9,14 +11,12 @@ package main.algorithms;
 
 public class BubbleSort {
 
-    public static <T extends Comparable> void sort(T[] a) {
-        for (int i = 0; i < a.length; i++) {
+    public static <T extends Comparable> void sort(T[] array) {
+        for (int i = 0; i < array.length; i++) {
             // last i elements are already in sorted
-            for (int j = 1; j < a.length - i; j++) {
-                if (a[j - 1].compareTo(a[j]) > 0) {
-                    T temp = a[j - 1]; // swap
-                    a[j - 1] = a[j];
-                    a[j] = temp;
+            for (int j = 1; j < array.length - i; j++) {
+                if (array[j - 1].compareTo(array[j]) > 0) {
+                    SwapElementInArray.swap(array, j - 1, j);
                 }
             }
         }
@@ -25,15 +25,13 @@ public class BubbleSort {
     /**
      * This is simple version of in-place, stable bubble sort, whose best case is O(n) and worst Case O(n^2);
      */
-    public static void sortSimple(int[] a) {
-        for (int i = 0; i < a.length; i++) {
+    public static <T extends Comparable> void sortSimple(T[] array) {
+        for (int i = 0; i < array.length; i++) {
             boolean sorted = true; // flag to check if any swapping made
             // last elements sorted
-            for (int j = 1; j < a.length - i; j++) {
-                if (a[j] < a[j - 1]) { //swap
-                    int temp = a[j - 1];
-                    a[j - 1] = a[j];
-                    a[j] = temp;
+            for (int j = 1; j < array.length - i; j++) {
+                if (array[j - 1].compareTo(array[j]) > 0) {
+                    SwapElementInArray.swap(array, j - 1, j);
                     sorted = false;
                 }
             }

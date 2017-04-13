@@ -20,13 +20,21 @@ public class Edge implements Comparable<Edge> {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         Edge edge = (Edge) o;
 
-        if (weight != null ? !weight.equals(edge.weight) : edge.weight != null) return false;
-        if (from != null ? !from.equals(edge.from) : edge.from != null) return false;
+        if (weight != null ? !weight.equals(edge.weight) : edge.weight != null) {
+            return false;
+        }
+        if (from != null ? !from.equals(edge.from) : edge.from != null) {
+            return false;
+        }
         return !(to != null ? !to.equals(edge.to) : edge.to != null);
 
     }

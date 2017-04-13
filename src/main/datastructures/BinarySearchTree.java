@@ -7,8 +7,6 @@ package main.datastructures;
 // insert -> O(h) can be O(n) if input is sorted
 // search -> O(h) can be O(n) if input is sorted
 // remove -> O(h) can be O(n) if input is sorted
-// no duplicate is allowed, for duplicate supported BST look BSTWithDuplicate.java
-// most methods are recursive, look BSTIterative.java for iterative approach BST
 public class BinarySearchTree<K extends Comparable> implements Tree<K> {
     private Node root;
 
@@ -29,25 +27,34 @@ public class BinarySearchTree<K extends Comparable> implements Tree<K> {
     }
 
     private void deleteNode(Node x) {
-        if (x == null) return;
+        if (x == null) {
+            return;
+        }
         Node p = x.parent;
         if (x.left == null && x.right == null) { // case 1 => when x has no children
             x.parent = null;
-            if (p.left == x) p.left = null;
-            else p.right = null;
+            if (p.left == x) {
+                p.left = null;
+            } else {
+                p.right = null;
+            }
         } else if (x.left == null || x.right == null) {// case 2 => when x has one child
             x.parent = null;
             if (x.left == null) { // x has one right child
                 if (p.left == x) // x is left child
+                {
                     p.left = x.right;
-                else          // x is right child
+                } else          // x is right child
+                {
                     p.right = x.right;
+                }
                 x.right.parent = p;
             } else { // x has one left child
-                if (p.left == x)
+                if (p.left == x) {
                     p.left = x.left;
-                else
+                } else {
                     p.right = x.left;
+                }
                 x.left.parent = p;
             }
         } else { // case 3 =>  x has two children
@@ -76,7 +83,9 @@ public class BinarySearchTree<K extends Comparable> implements Tree<K> {
         }
         if (x.right == null) {
             return x;
-        } else return findMax(x.right);
+        } else {
+            return findMax(x.right);
+        }
     }
 
     private Node findMin(Node x) {
@@ -85,7 +94,9 @@ public class BinarySearchTree<K extends Comparable> implements Tree<K> {
         }
         if (x.left == null) {
             return x;
-        } else return findMin(x.left);
+        } else {
+            return findMin(x.left);
+        }
     }
 
     private Node findNode(K k, Node node) {
@@ -105,11 +116,14 @@ public class BinarySearchTree<K extends Comparable> implements Tree<K> {
     }
 
     private Node put(Node x, K k, Node parent) {
-        if (x == null) return new Node(k, parent);
-        if (x.value.compareTo(k) > 0)
+        if (x == null) {
+            return new Node(k, parent);
+        }
+        if (x.value.compareTo(k) > 0) {
             x.left = put(x.left, k, x);
-        else if (x.value.compareTo(k) < 0)
+        } else if (x.value.compareTo(k) < 0) {
             x.right = put(x.right, k, x);
+        }
         x.size = 1 + size(x.left) + size(x.right);
         return x;
     }

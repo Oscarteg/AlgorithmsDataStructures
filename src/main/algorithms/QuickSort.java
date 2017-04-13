@@ -1,5 +1,9 @@
 package main.algorithms;
 
+import main.utils.SwapElementInArray;
+
+import static main.utils.SwapElementInArray.swap;
+
 /**
  * Created by Oscar on 08/04/2017.
  */
@@ -19,23 +23,19 @@ public class QuickSort {
 
     }
 
-    private static <T extends Comparable> int partition(T[] a, int lo, int hi) {
+    private static <T extends Comparable> int partition(T[] array, int lo, int hi) {
         int pivot = lo + (hi - lo) / 2;
-        swap(a, pivot, hi);
+        SwapElementInArray.swap(array, pivot, hi);
         int storeIndex = lo;
         for (int i = lo; i < hi; i++) {
-            if (a[i].compareTo(a[hi]) < 1) {
-                swap(a, storeIndex, i);
+            if (array[i].compareTo(array[hi]) < 1) {
+                swap(array, storeIndex, i);
                 storeIndex++;
             }
         }
-        swap(a, hi, storeIndex);
+        SwapElementInArray.swap(array, hi, storeIndex);
         return storeIndex;
     }
 
-    private static <T extends Comparable> void swap(T[] a, int i, int j) {
-        T temp = a[i];
-        a[i] = a[j];
-        a[j] = temp;
-    }
+
 }

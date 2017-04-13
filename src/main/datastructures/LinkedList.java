@@ -25,7 +25,9 @@ class LinkedList<E> {
 
     public E get(int index) {
         if (index >= size && index < 0) // check boundaries
+        {
             throw new NoSuchElementException();
+        }
 
         // find element at given index
         Node node = head;
@@ -41,7 +43,9 @@ class LinkedList<E> {
         while (temp.next != null) {
             if (temp.next.elem.equals(element)) {
                 // if found node is last node of the list, need to change tail
-                if (temp.next == tail) tail = temp;
+                if (temp.next == tail) {
+                    tail = temp;
+                }
                 temp.next = temp.next.next;
                 // if found node is first node if the list, need to change head
                 head = dummy.next;

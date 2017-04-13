@@ -13,7 +13,9 @@ public class AVLTree<K extends Comparable> implements Tree<K> {
     private Node root;
 
     private Node put(Node x, K k) {
-        if (x == null) return new Node(k);
+        if (x == null) {
+            return new Node(k);
+        }
         if (x.value.compareTo(k) > 0) {
             x.left = put(x.left, k);
         } else if (x.value.compareTo(k) < 0) {
@@ -99,7 +101,6 @@ public class AVLTree<K extends Comparable> implements Tree<K> {
 
     }
 
-
     private class Node {
         K value;
         int height, size;
@@ -107,46 +108,6 @@ public class AVLTree<K extends Comparable> implements Tree<K> {
 
         public Node(K k) {
             this.value = k;
-        }
-
-        public K getValue() {
-            return value;
-        }
-
-        public void setValue(K value) {
-            this.value = value;
-        }
-
-        public int getHeight() {
-            return height;
-        }
-
-        public void setHeight(int height) {
-            this.height = height;
-        }
-
-        public int getSize() {
-            return size;
-        }
-
-        public void setSize(int size) {
-            this.size = size;
-        }
-
-        public Node getLeft() {
-            return left;
-        }
-
-        public void setLeft(Node left) {
-            this.left = left;
-        }
-
-        public Node getRight() {
-            return right;
-        }
-
-        public void setRight(Node right) {
-            this.right = right;
         }
     }
 }

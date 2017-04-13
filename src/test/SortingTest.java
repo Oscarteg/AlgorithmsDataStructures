@@ -29,7 +29,7 @@ public class SortingTest {
 
     @Test
     public void testBubbleSort() {
-        BubbleSort.sort(this.array);
+        BubbleSort.sortSimple(this.array);
         assertArrayEquals(this.sortedArray, this.array);
     }
 
@@ -39,18 +39,20 @@ public class SortingTest {
         assertArrayEquals(this.sortedArray, this.array);
     }
 
+    @Ignore
     @Test
     public void testMergeSort() {
         MergeSort.sort(this.array);
         assertArrayEquals(this.sortedArray, this.array);
     }
 
-    @Ignore
     @Test
     public void testHeapSort() {
-        HeapSort ms = new HeapSort();
-//        ms.heapSort(this.array);
-        assertArrayEquals(this.sortedArray, this.array);
+        int[] array  = new int[]{8, 7, 6, 5, 4, 3, 2, 1};
+        int[] sortedArray  = new int[]{1, 2, 3, 4, 5, 6, 7, 8};
+        HeapSort hs = new HeapSort();
+        hs.sort(array);
+        assertArrayEquals(sortedArray, array);
     }
 
     @AfterEach
@@ -58,13 +60,5 @@ public class SortingTest {
         System.out.println("It took " + (System.nanoTime() - startTime));
 
     }
-
-    private void printArray(int[] list) {
-        for (int aList : list) {
-            System.out.print(aList + " ");
-        }
-        System.out.println();
-    }
-
 
 }

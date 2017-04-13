@@ -26,7 +26,9 @@ public class InsertionSort {
 
             while (j > 0 && a[j - 1].compareTo(ii) > 0) a[j] = a[--j];
 
-            if (j != i) a[j] = ii;
+            if (j != i) {
+                a[j] = ii;
+            }
         }
     }
 
@@ -38,7 +40,9 @@ public class InsertionSort {
                     int temp = a[j - 1];
                     a[j - 1] = a[j];
                     a[j] = temp;
-                } else break;
+                } else {
+                    break;
+                }
             }
         }
     }
