@@ -1,0 +1,14 @@
+amsterdam, haarlem, 20
+amsterdam, kudelstaart, 15
+amsterdam, leiden, 40
+amsterdam, hilversum, 35
+amsterdam, utrecht, 49
+haarlem, leiden, 30
+leiden, denHaag, 15
+leiden, utrecht, 55
+leiden, rotterdam, 35
+utrecht, ede, 50
+utrecht, amersfoort, 26
+amersfoort, hilversum, 25
+amersfoort, barneveld, 15
+ede, barneveld, 18

@@ -5,19 +5,19 @@ package main.utils;
  */
 public class StopWatch {
 
-    private long startTime;
+	private long startTime;
 
 
-    public StopWatch() {
-        startTime = System.nanoTime();
-    }
+	public StopWatch() {
+		startTime = System.nanoTime();
+	}
 
-    public long getElapsedTime() {
-        return (System.nanoTime() - this.startTime) / 1000;
-    }
+	public long getElapsedTime() {
+		return (System.nanoTime() - this.startTime) / 1000;
+	}
 
-    @Override
-    public String toString() {
-        return " Elapsed time: " + this.getElapsedTime() + "ms";
-    }
+	@Override
+	public String toString() {
+		return " Elapsed time: " + this.getElapsedTime() + "ms";
+	}
 }

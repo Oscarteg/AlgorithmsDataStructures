@@ -10,81 +10,82 @@ import java.util.Queue;
  */
 public class TreeTraversals {
 
-    public static void postOrder(Node root) {
-        if (root == null) {
-            return;
-        }
-        postOrder(root.getLeft());
-        postOrder(root.getRight());
-        System.out.print(root.getValue() + " ");
-    }
+	public static void postOrder(Node root) {
+		if (root == null) {
+			return;
+		}
+		postOrder(root.getLeft());
+		postOrder(root.getRight());
+		System.out.print(root.getValue() + " ");
+	}
 
-    public static void preOrder(Node root) {
-        if (root == null) {
-            return;
-        }
-        System.out.print(root.getValue() + " ");
-        preOrder(root.getLeft());
-        preOrder(root.getRight());
-    }
+	public static void preOrder(Node root) {
+		if (root == null) {
+			return;
+		}
+		System.out.print(root.getValue() + " ");
+		preOrder(root.getLeft());
+		preOrder(root.getRight());
+	}
 
-    public static void inOrder(Node root) {
-        if (root == null) {
-            return;
-        }
-        inOrder(root.getLeft());
-        System.out.print(root.getValue() + " ");
-        inOrder(root.getRight());
-    }
+	public static void inOrder(Node root) {
+		if (root == null) {
+			return;
+		}
+		inOrder(root.getLeft());
+		System.out.print(root.getValue() + " ");
+		inOrder(root.getRight());
+	}
 
-    public void levelOrder(Node root) {
-        if (root == null) {
-            return;
-        }
-        Queue<Node> q = new LinkedList<>();
-        q.add(root); // add first level to queue
-        int level = 1;
-        while (!q.isEmpty()) {
-            Node x = q.remove();
-            level--;
-            if (x.getLeft() != null) {
-                q.add(x.getLeft());
-            }
-            if (x.getRight() != null) {
-                q.add(x.getRight());
-            }
+	public static void print(Node rootNode) {
+		System.out.println(".");
+		_print(rootNode, 0);
+	}
 
-            if (level == 0 && !q.isEmpty()) {
-                level += q.size();
-                System.out.println(q);
-            }
-        }
-    }
+	private static void _print(Node node, final int indentation) {
+		if (null == node) {
+			return;
+		}
 
-    public static void print(Node rootNode) {
-        System.out.println(".");
-        _print(rootNode, 0);
-    }
+		final String type;
+		if (indentation == 0) {
+			type = "Root";
+		} else {
+			type = "Child";
+		}
 
-    private static void _print(Node node, final int indentation) {
-        if(null == node) {
-            return;
-        }
+		String indent = "";
+		for (int i = 0; i < indentation; i++)
+			indent += "    ";
 
-        final String type;
-        if(indentation == 0)
-            type = "Root";
-        else
-            type = "Child";
+		System.out.printf("%s└── %s node with value '%s'\n", indent, type, node.getValue());
 
-        String indent = "";
-        for(int i = 0; i < indentation; i++)
-            indent += "    ";
+		_print(node.getLeft(), indentation + 1);
+		_print(node.getRight(), indentation + 1);
+	}
 
-        System.out.printf("%s└── %s node with value '%s'\n", indent, type, node.getValue());
+	public void levelOrder(Node root) {
+		if (root == null) {
+			return;
+		}
+		Queue<Node> q = new LinkedList<>();
+		q.add(root); // add first level to queue
+		int level = 1;
+		while (!q.isEmpty()) {
+			Node x = q.remove();
+			level--;
+			if (x.getLeft() != null) {
+				q.add(x.getLeft());
+			}
+			if (x.getRight() != null) {
+				q.add(x.getRight());
+			}
 
-        _print(node.getLeft(), indentation + 1);
-        _print(node.getRight(), indentation + 1);
-    }
+			if (level == 0 && !q.isEmpty()) {
+				level += q.size();
+				System.out.println(q);
+			}
+		}
+	}
 
 }

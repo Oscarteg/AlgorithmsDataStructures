@@ -7,7 +7,7 @@ import java.util.Arrays;
  */
 public class PrintArray {
 
-    public static <T> void printArray (T[] array) {
-        System.out.println(Arrays.toString(array));
-    }
+	public static <T> void printArray(T[] array) {
+		System.out.println(Arrays.toString(array));
+	}
 }
