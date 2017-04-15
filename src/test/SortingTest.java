@@ -41,7 +41,6 @@ public class SortingTest {
 		assertArrayEquals(this.sortedArray, this.array);
 	}
 
-	@Ignore
 	@Test
 	public void testMergeSort() {
 		MergeSort.sort(this.array);
