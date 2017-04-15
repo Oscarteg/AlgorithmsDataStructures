@@ -1,6 +1,4 @@
-package main.algorithms;
-
-import main.utils.Node;
+package main.utils;
 
 import java.util.LinkedList;
 import java.util.Queue;

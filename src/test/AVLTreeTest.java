@@ -1,7 +1,7 @@
 package test;
 
 import jdk.nashorn.internal.ir.annotations.Ignore;
-import main.algorithms.TreeTraversals;
+import main.utils.TreeTraversals;
 import main.datastructures.trees.AVLTree;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
