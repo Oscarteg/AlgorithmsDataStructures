@@ -1,4 +1,4 @@
-package main.algorithms;
+package main.algorithms.sorting;
 
 import main.utils.SwapElementInArray;
 

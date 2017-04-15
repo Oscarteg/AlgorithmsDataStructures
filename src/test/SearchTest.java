@@ -1,6 +1,6 @@
 package test;
 
-import main.algorithms.BinarySearch;
+import main.algorithms.search.BinarySearch;
 import main.utils.StopWatch;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

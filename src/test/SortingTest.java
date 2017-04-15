@@ -1,10 +1,10 @@
 package test;
 
 import jdk.nashorn.internal.ir.annotations.Ignore;
-import main.algorithms.BubbleSort;
-import main.algorithms.HeapSort;
-import main.algorithms.MergeSort;
-import main.algorithms.QuickSort;
+import main.algorithms.sorting.BubbleSort;
+import main.algorithms.sorting.HeapSort;
+import main.algorithms.sorting.MergeSort;
+import main.algorithms.sorting.QuickSort;
 import main.utils.StopWatch;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

@@ -1,4 +1,4 @@
-package main.datastructures.graph;
+package main.utils.interfaces;
 
 import java.util.Set;
 

@@ -1,6 +1,7 @@
-package main.datastructures;
+package main.datastructures.trees;
 
 import main.utils.Node;
+import main.utils.interfaces.Tree;
 
 /**
  * Created by Oscar on 08/04/2017.

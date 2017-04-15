@@ -1,4 +1,4 @@
-package main.algorithms;
+package main.algorithms.sorting;
 
 /**
  * Created by Oscar on 08/04/2017.

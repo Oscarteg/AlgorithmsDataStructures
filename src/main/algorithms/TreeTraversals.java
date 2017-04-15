@@ -6,6 +6,8 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
+ * This class is for printing all Trees that implement the Tree class.
+ * <p>
  * Created by Oscar on 08/04/2017.
  */
 public class TreeTraversals {
@@ -38,7 +40,6 @@ public class TreeTraversals {
 	}
 
 	public static void print(Node rootNode) {
-		System.out.println(".");
 		_print(rootNode, 0);
 	}
 
@@ -64,7 +65,7 @@ public class TreeTraversals {
 		_print(node.getRight(), indentation + 1);
 	}
 
-	public void levelOrder(Node root) {
+	public static void levelOrder(Node root) {
 		if (root == null) {
 			return;
 		}

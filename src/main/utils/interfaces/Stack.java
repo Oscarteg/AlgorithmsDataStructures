@@ -1,4 +1,4 @@
-package main.datastructures;
+package main.utils.interfaces;
 
 /**
  * Created by Oscar on 08/04/2017.
