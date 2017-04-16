@@ -5,34 +5,34 @@ package main.utils;
  */
 final public class Entry {
 
-    private Object element;
-    private Entry next = null;
-    private Entry previous = null;
+	private Object element;
+	private Entry next = null;
+	private Entry previous = null;
 
-    public Entry(Object element) {
-        this.element = element;
-    }
+	public Entry(Object element) {
+		this.element = element;
+	}
 
-    public Entry() {
-    }
+	public Entry() {
+	}
 
-    public Object getElement() {
-        return element;
-    }
+	public Object getElement() {
+		return element;
+	}
 
-    public Entry getNext() {
-        return next;
-    }
+	public Entry getNext() {
+		return next;
+	}
 
-    public void setNext(Entry next) {
-        this.next = next;
-    }
+	public void setNext(Entry next) {
+		this.next = next;
+	}
 
-    public Entry getPrevious() {
-        return previous;
-    }
+	public Entry getPrevious() {
+		return previous;
+	}
 
-    public void setPrevious(Entry previous) {
-        this.previous = previous;
-    }
+	public void setPrevious(Entry previous) {
+		this.previous = previous;
+	}
 }

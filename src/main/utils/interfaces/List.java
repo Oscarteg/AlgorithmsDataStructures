@@ -7,21 +7,21 @@ import java.util.Iterator;
  */
 
 public interface List<E> {
-    void addFirst(Object o);
+	void addFirst(Object o);
 
-    Object getFirst();
+	Object getFirst();
 
-    Object removeFirst();
+	Object removeFirst();
 
-    void addLast(Object o);
+	void addLast(Object o);
 
-    Object getLast();
+	Object getLast();
 
-    Object removeLast();
+	Object removeLast();
 
-    Iterator iterator();
+	Iterator iterator();
 
-    int size();
+	int size();
 
-    void clear();
+	void clear();
 }

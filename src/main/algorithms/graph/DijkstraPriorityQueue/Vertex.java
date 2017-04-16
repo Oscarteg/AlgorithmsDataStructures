@@ -5,63 +5,63 @@ import java.util.List;
 
 public class Vertex implements Comparable<Vertex> {
 
-    private List<Edge> listEdges = new ArrayList<Edge>();
-    private String label;
-    private int value = Integer.MAX_VALUE;
-    private boolean visited = false;
-    private Vertex previousVertext;
+	private List<Edge> listEdges = new ArrayList<Edge>();
+	private String label;
+	private int value = Integer.MAX_VALUE;
+	private boolean visited = false;
+	private Vertex previousVertext;
 
 
-    public Vertex(String label) {
-        this.label = label;
-    }
+	public Vertex(String label) {
+		this.label = label;
+	}
 
-    public void addEdge(Edge edge) {
-        listEdges.add(edge);
-    }
-
-
-    public String getLabel() {
-        return label;
-    }
-
-    public List<Edge> getEdges() {
-        return listEdges;
-    }
-
-    public String toString() {
-        return value + " " + label;
-    }
-
-    public int getValue() {
-        return value;
-    }
-
-    public void setValue(int value) {
-        this.value = value;
-    }
-
-    public void setVisited() {
-        visited = true;
-    }
-
-    public boolean isVisited() {
-        return visited;
-    }
-
-    @Override
-    public int compareTo(Vertex otherVertex) {
-        return ((Integer) value).compareTo(otherVertex.getValue());
-    }
+	public void addEdge(Edge edge) {
+		listEdges.add(edge);
+	}
 
 
-    public void setPreviousVertex(Vertex previousVertext) {
-        this.previousVertext = previousVertext;
-    }
+	public String getLabel() {
+		return label;
+	}
+
+	public List<Edge> getEdges() {
+		return listEdges;
+	}
+
+	public String toString() {
+		return value + " " + label;
+	}
+
+	public int getValue() {
+		return value;
+	}
+
+	public void setValue(int value) {
+		this.value = value;
+	}
+
+	public void setVisited() {
+		visited = true;
+	}
+
+	public boolean isVisited() {
+		return visited;
+	}
+
+	@Override
+	public int compareTo(Vertex otherVertex) {
+		return ((Integer) value).compareTo(otherVertex.getValue());
+	}
 
 
-    public Vertex getRoute() {
-        return previousVertext;
-    }
+	public void setPreviousVertex(Vertex previousVertext) {
+		this.previousVertext = previousVertext;
+	}
+
+
+	public Vertex getRoute() {
+		return previousVertext;
+	}
 }
 
