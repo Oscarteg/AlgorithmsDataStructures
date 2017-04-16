@@ -11,19 +11,13 @@ public class LZW implements Decompression, Compression {
 	private static int counter = 256;
 
 	public static void main(String[] args) {
-//		compress("BLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLA");
+//z		compress("BLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLA");
 	}
 
 	public String compress(String text) {
 		String[] dic = createDictionary();
 		String p = "";
 		String c = "";
-
-		try {
-			Thread.sleep(10000000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
 
 		for (int i = 0; i <= text.length(); i++) {
 
