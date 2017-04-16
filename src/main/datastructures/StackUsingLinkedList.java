@@ -8,39 +8,39 @@ import main.utils.interfaces.Stack;
  */
 
 public class StackUsingLinkedList implements Stack {
-	private DoubleLinkedList lijst;
+    private DoubleLinkedList lijst;
 
-	public StackUsingLinkedList() {
-		lijst = new DoubleLinkedList();
-	}
+    public StackUsingLinkedList() {
+        lijst = new DoubleLinkedList();
+    }
 
-	@Override
-	public void push(Object o) {
-		lijst.addLast(o);
-	}
+    @Override
+    public void push(Object o) {
+        lijst.addLast(o);
+    }
 
-	@Override
-	public Object pop() {
-		return lijst.removeLast();
-	}
+    @Override
+    public Object pop() {
+        return lijst.removeLast();
+    }
 
-	@Override
-	public Object peek() {
-		return lijst.getLast();
-	}
+    @Override
+    public Object peek() {
+        return lijst.getLast();
+    }
 
-	@Override
-	public int size() {
-		return lijst.size();
-	}
+    @Override
+    public int size() {
+        return lijst.size();
+    }
 
-	@Override
-	public boolean isEmpty() {
-		return (lijst.size() == 0);
-	}
+    @Override
+    public boolean isEmpty() {
+        return (lijst.size() == 0);
+    }
 
-	@Override
-	public void makeEmpty() {
+    @Override
+    public void makeEmpty() {
 
-	}
+    }
 }

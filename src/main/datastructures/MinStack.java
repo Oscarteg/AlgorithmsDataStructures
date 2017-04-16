@@ -6,38 +6,38 @@ import java.util.Stack;
  * Created by Oscar on 08/04/2017.
  */
 public class MinStack {
-	private Stack<Integer> stack;
-	private Stack<Integer> min;
+    private Stack<Integer> stack;
+    private Stack<Integer> min;
 
-	/**
-	 * initialize your data structure here.
-	 */
+    /**
+     * initialize your data structure here.
+     */
 
-	public MinStack() {
-		stack = new Stack<>();
-		min = new Stack<>();
-	}
+    public MinStack() {
+        stack = new Stack<>();
+        min = new Stack<>();
+    }
 
-	public void push(int x) {
-		stack.push(x);
-		if (min.isEmpty() || x <= min.peek()) {
-			min.push(x);
-		}
-	}
+    public void push(int x) {
+        stack.push(x);
+        if (min.isEmpty() || x <= min.peek()) {
+            min.push(x);
+        }
+    }
 
-	public void pop() {
-		int p = stack.pop();
-		if (min.peek() == p) {
-			min.pop();
-		}
+    public void pop() {
+        int p = stack.pop();
+        if (min.peek() == p) {
+            min.pop();
+        }
 
-	}
+    }
 
-	public int top() {
-		return stack.peek();
-	}
+    public int top() {
+        return stack.peek();
+    }
 
-	public int getMin() {
-		return min.peek();
-	}
+    public int getMin() {
+        return min.peek();
+    }
 }
