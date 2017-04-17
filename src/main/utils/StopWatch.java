@@ -7,7 +7,6 @@ public class StopWatch {
 
 	private long startTime;
 
-
 	public StopWatch() {
 		startTime = System.nanoTime();
 	}

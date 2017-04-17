@@ -1,45 +1,56 @@
 package main.algorithms.compression;
 
-import main.utils.interfaces.Decompression;
-import main.utils.interfaces.Compression;
+import java.util.ArrayList;
 
 /**
- * Created by Oscar on 13/04/2017.
+ * Created by Oscar and Guus on 13/04/2017.
  */
 
-public class LZW implements Decompression, Compression {
+public class LZW {
 	private static int counter = 256;
+	private static int counter2 = 256;
 
-	public static void main(String[] args) {
-//		compress("BLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLA");
+	public static ArrayList<Integer> compress(String text) {
+		String[] dictionary = createDictionary();
+		String previous = "";
+		ArrayList<Integer> compressed = new ArrayList<>();
+
+		for (char current : text.toCharArray()) {
+
+			int index = getIndex(previous + current, dictionary);
+			if (index != -1) {
+				previous = previous + current;
+			} else {
+				compressed.add(getIndex(previous, dictionary));
+				dictionary[counter] = previous + current;
+				counter++;
+				previous = current + "";
+			}
+		}
+		compressed.add(getIndex(previous, dictionary));
+		return compressed;
 	}
 
-	public String compress(String text) {
-		String[] dic = createDictionary();
-		String p = "";
-		String c = "";
+	public static String decompress(ArrayList<Integer> compressed) {
+		String[] dictionary = createDictionary();
+		Integer previousIndex = -1;
+		String uncompressed = "";
 
-		try {
-			Thread.sleep(10000000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
+		for (Integer currentIndex : compressed) {
+			String currentValue = getString(currentIndex, dictionary);
+			uncompressed += currentValue;
+
+			String previousValue = getString(previousIndex, dictionary);
+			if (getIndex(previousValue + currentValue, dictionary) == -1) {
+				dictionary[counter2] = previousValue + (currentValue.substring(0, 1));
+				counter2++;
+			}
+
+			previousIndex = currentIndex;
+
 		}
 
-		for (int i = 0; i <= text.length(); i++) {
-
-			if (i != text.length()) {
-				c = text.substring(i, i + 1);
-			}
-			int index = getIndex(p + c, dic);
-			if (index != -1) {
-				p = p + c;
-			} else {
-				System.out.println(getIndex(p, dic) + " - '" + p + "'");
-				dic[counter] = p + c;
-				counter++;
-				p = c;
-			}
-		}
+		return uncompressed;
 	}
 
 	private static String[] createDictionary() {
@@ -50,22 +61,21 @@ public class LZW implements Decompression, Compression {
 		return dic;
 	}
 
-	private static int getIndex(String tokens, String[] dic) {
-		for (int i = 0; i < counter - 1; i++) {
-			if (dic[i].equals(tokens)) {
-				return i;
+	private static String getString(Integer searchIndex, String[] dictionary) {
+		return searchIndex != -1 ? dictionary[searchIndex] : "";
+	}
+
+	private static int getIndex(String searchInput, String[] dictionary) {
+		try {
+			for (int i = 0; i < counter - 1; i++) {
+				if (dictionary[i].equals(searchInput)) {
+					return i;
+				}
+
 			}
+			return -1;
+		} catch (Exception e) {
+			return -1;
 		}
-		return -1;
-	}
-
-	public String decode() {
-		return null;
-
-	}
-
-	@Override
-	public String decompress(String compressed) {
-		return null;
 	}
 }
