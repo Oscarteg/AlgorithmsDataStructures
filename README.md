@@ -1,6 +1,8 @@
+[![Build Status](https://travis-ci.org/Oscarteg/AlgorithmsDataStructures.svg?branch=master)](https://travis-ci.org/Oscarteg/AlgorithmsDataStructures)
+
 # AlgorithmsAndDatastructures
 This is my repo of some algorithms and datastructures for the classes IIAD and IAD1 on University of Applied Sciences Leiden.
-[![Build Status](https://travis-ci.org/Oscarteg/AlgorithmsDataStructures.svg?branch=master)](https://travis-ci.org/Oscarteg/AlgorithmsDataStructures)
+
 ## Algorithms
 
 ### Graph
@@ -8,7 +10,6 @@ This is my repo of some algorithms and datastructures for the classes IIAD and I
 - Dijkstra without a priority queue 
 
 ### Compression
-- Huffman
 - LZW
 
 ### Sorting
@@ -22,10 +23,7 @@ This is my repo of some algorithms and datastructures for the classes IIAD and I
 - Linearsearch
 - Binarysearch
 
-
-
 ## Datastructures
-
 - LinkedList
 - MinStack
 - StackUsingLinkedList
@@ -34,9 +32,9 @@ This is my repo of some algorithms and datastructures for the classes IIAD and I
 - AVL 
 - Binary
 
-
-
-
 # TODO
-There are todo's spread through the code. Look at them with your IDE. 
-
+- [ ] Huffman
+- [ ] Heapsort with generics
+- [ ] Hashtable
+- [ ] Queue
+- [ ] Double linked list - addLast() method + testing

@@ -42,10 +42,6 @@ public class DoubleLinkedList implements List {
 //		addAfter(object, header.previous); TODO
 	}
 
-	private void addAfter(Object object, Entry entry) {
-		// TODO
-	}
-
 	public Object getLast() {
 		return header.previous.element;
 	}
