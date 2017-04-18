@@ -1,8 +1,7 @@
 package test;
 
-import jdk.nashorn.internal.ir.annotations.Ignore;
 import main.datastructures.trees.AVLTree;
-import main.utils.TreeTraversals;
+import main.utils.StopWatch;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -15,10 +14,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class AVLTreeTest {
 
 	private AVLTree avlTree;
+	private StopWatch stopWatch;
 
 	@BeforeEach
 	public void setup() {
 		this.avlTree = new AVLTree();
+		this.stopWatch = new StopWatch();
 		avlTree.insert(5);
 		avlTree.insert(10);
 		avlTree.insert(15);
@@ -35,5 +36,10 @@ public class AVLTreeTest {
 		assertEquals(this.avlTree.getRoot().getLeft().getRight().getValue(), 15);
 		assertEquals(this.avlTree.getRoot().getRight().getValue(), 30);
 		assertEquals(this.avlTree.getRoot().getRight().getRight().getValue(), 50);
+	}
+
+	@AfterEach
+	public void elapsedTime() {
+		System.out.println(this.stopWatch.toString());
 	}
 }

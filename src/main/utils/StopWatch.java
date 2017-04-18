@@ -17,6 +17,6 @@ public class StopWatch {
 
 	@Override
 	public String toString() {
-		return " Elapsed time: " + this.getElapsedTime() + "ms";
+		return "Elapsed time: " + this.getElapsedTime() + "ms";
 	}
 }

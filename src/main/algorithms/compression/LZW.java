@@ -7,8 +7,8 @@ import java.util.ArrayList;
  */
 
 public class LZW {
-	private static int counter = 256;
-	private static int counter2 = 256;
+	private static int compressCounter = 256;
+	private static int decompressCounter = 256;
 
 	public static ArrayList<Integer> compress(String text) {
 		String[] dictionary = createDictionary();
@@ -22,8 +22,8 @@ public class LZW {
 				previous = previous + current;
 			} else {
 				compressed.add(getIndex(previous, dictionary));
-				dictionary[counter] = previous + current;
-				counter++;
+				dictionary[compressCounter] = previous + current;
+				compressCounter++;
 				previous = current + "";
 			}
 		}
@@ -42,14 +42,11 @@ public class LZW {
 
 			String previousValue = getString(previousIndex, dictionary);
 			if (getIndex(previousValue + currentValue, dictionary) == -1) {
-				dictionary[counter2] = previousValue + (currentValue.substring(0, 1));
-				counter2++;
+				dictionary[decompressCounter] = previousValue + (currentValue.substring(0, 1));
+				decompressCounter++;
 			}
-
 			previousIndex = currentIndex;
-
 		}
-
 		return uncompressed;
 	}
 
@@ -67,11 +64,10 @@ public class LZW {
 
 	private static int getIndex(String searchInput, String[] dictionary) {
 		try {
-			for (int i = 0; i < counter - 1; i++) {
+			for (int i = 0; i < compressCounter - 1; i++) {
 				if (dictionary[i].equals(searchInput)) {
 					return i;
 				}
-
 			}
 			return -1;
 		} catch (Exception e) {

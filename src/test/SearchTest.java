@@ -28,6 +28,6 @@ public class SearchTest {
 
 	@AfterEach
 	public void elapsedTime() {
-		this.stopWatch.toString();
+		System.out.println(this.stopWatch.toString());
 	}
 }

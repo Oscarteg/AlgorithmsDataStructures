@@ -1,6 +1,7 @@
 package test;
 
 import main.datastructures.LinkedListWithIterator.DoubleLinkedList;
+import main.utils.StopWatch;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
@@ -17,9 +18,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class DoubleLinkedListTest {
 	private DoubleLinkedList list;
 	private Iterator iterator;
+	private StopWatch stopWatch;
 
 	@BeforeEach
 	public void setup() {
+		this.stopWatch = new StopWatch();
 		list = new DoubleLinkedList();
 		iterator = list.iterator();
 	}
@@ -57,6 +60,7 @@ public class DoubleLinkedListTest {
 	@AfterEach
 	public void teardown() {
 		list.clear();
+		System.out.println(this.stopWatch.toString());
 	}
 
 	private void testList(Object[] objects) {
