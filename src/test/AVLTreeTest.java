@@ -25,7 +25,6 @@ public class AVLTreeTest {
 		avlTree.insert(25);
 		avlTree.insert(30);
 		avlTree.insert(50);
-
 	}
 
 	@Test
@@ -34,15 +33,7 @@ public class AVLTreeTest {
 		assertEquals(this.avlTree.getRoot().getLeft().getValue(), 10);
 		assertEquals(this.avlTree.getRoot().getLeft().getLeft().getValue(), 5);
 		assertEquals(this.avlTree.getRoot().getLeft().getRight().getValue(), 15);
-
 		assertEquals(this.avlTree.getRoot().getRight().getValue(), 30);
 		assertEquals(this.avlTree.getRoot().getRight().getRight().getValue(), 50);
-
-	}
-
-	@Ignore
-	@AfterEach
-	public void printTree() {
-		TreeTraversals.print(this.avlTree.getRoot());
 	}
 }
