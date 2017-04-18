@@ -1,6 +1,6 @@
 # AlgorithmsAndDatastructures
 This is my repo of some algorithms and datastructures for the classes IIAD and IAD1 on University of Applied Sciences Leiden.
-
+[![Build Status](https://travis-ci.org/Oscarteg/AlgorithmsDataStructures.svg?branch=master)](https://travis-ci.org/Oscarteg/AlgorithmsDataStructures)
 ## Algorithms
 
 ### Graph
