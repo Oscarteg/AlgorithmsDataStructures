@@ -18,7 +18,7 @@ public class BinarySearch {
 				return mid; // key found
 			}
 
-			if (array[mid].compareTo(key) > 0) {
+			if (array[mid].compareTo(key) < 0) {
 				lo = mid + 1;
 			} else {
 				hi = mid - 1;
