@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AlgorithmsDataStructures.iml" filepath="$PROJECT_DIR$/AlgorithmsDataStructures.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AlgorithmsDataStructures_main.iml" filepath="$PROJECT_DIR$/.idea/modules/AlgorithmsDataStructures_main.iml" group="AlgorithmsDataStructures" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AlgorithmsDataStructures_test.iml" filepath="$PROJECT_DIR$/.idea/modules/AlgorithmsDataStructures_test.iml" group="AlgorithmsDataStructures" />
     </modules>
   </component>
 </project>

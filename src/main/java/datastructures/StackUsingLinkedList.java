@@ -1,6 +1,5 @@
-package main.java.datastructures;
+package datastructures;
 
-import main.java.datastructures.LinkedListWithIterator.DoubleLinkedList;
 import main.java.utils.interfaces.Stack;
 
 /**

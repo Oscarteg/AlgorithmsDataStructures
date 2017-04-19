@@ -1,4 +1,4 @@
-package main.java.algorithms.graph.DijkstraPriorityQueue;
+package algorithms.graph.DijkstraPriorityQueue;
 
 import java.io.IOException;
 import java.nio.file.Files;

@@ -1,4 +1,4 @@
-package main.java.algorithms;
+package algorithms;
 
 /**
  * Created by Oscar on 13/04/2017.

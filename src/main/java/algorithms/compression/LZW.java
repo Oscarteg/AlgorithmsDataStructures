@@ -1,4 +1,4 @@
-package main.java.algorithms.compression;
+package algorithms.compression;
 
 import java.util.ArrayList;
 

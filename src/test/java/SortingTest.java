@@ -1,9 +1,7 @@
-package test.java;
-
-import main.java.algorithms.sorting.BubbleSort;
-import main.java.algorithms.sorting.HeapSort;
-import main.java.algorithms.sorting.MergeSort;
-import main.java.algorithms.sorting.QuickSort;
+import algorithms.sorting.BubbleSort;
+import algorithms.sorting.HeapSort;
+import algorithms.sorting.MergeSort;
+import algorithms.sorting.QuickSort;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

@@ -1,7 +1,8 @@
-package main.java.algorithms.graph;
+package algorithms.graph;
 
-import main.java.datastructures.graph.Edge;
-import main.java.datastructures.graph.WeightedGraph;
+
+import datastructures.graph.Edge;
+import datastructures.graph.WeightedGraph;
 
 import java.util.HashMap;
 import java.util.Map;

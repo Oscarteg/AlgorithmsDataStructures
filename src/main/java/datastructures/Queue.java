@@ -1,4 +1,4 @@
-package main.java.datastructures;
+package datastructures;
 
 /**
  * Created by Oscar on 08/04/2017.

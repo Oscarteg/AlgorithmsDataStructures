@@ -1,6 +1,7 @@
-package main.java.datastructures.LinkedListWithIterator;
+package datastructures.LinkedListWithIterator;
 
-import main.java.utils.interfaces.List;
+
+import utils.interfaces.List;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;

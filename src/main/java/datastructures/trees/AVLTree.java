@@ -1,7 +1,8 @@
-package main.java.datastructures.trees;
+package datastructures.trees;
 
-import main.java.utils.Node;
-import main.java.utils.interfaces.Tree;
+
+import utils.Node;
+import utils.interfaces.Tree;
 
 /**
  * Created by Oscar on 08/04/2017.

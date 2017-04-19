@@ -1,6 +1,4 @@
-package test.java;
-
-import main.java.datastructures.LinkedListWithIterator.DoubleLinkedList;
+import datastructures.LinkedListWithIterator.DoubleLinkedList;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;

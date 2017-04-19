@@ -1,6 +1,4 @@
-package test.java;
-
-import main.java.datastructures.trees.AVLTree;
+import datastructures.trees.AVLTree;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

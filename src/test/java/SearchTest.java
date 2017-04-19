@@ -1,6 +1,4 @@
-package test.java;
-
-import main.java.algorithms.search.BinarySearch;
+import algorithms.search.BinarySearch;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

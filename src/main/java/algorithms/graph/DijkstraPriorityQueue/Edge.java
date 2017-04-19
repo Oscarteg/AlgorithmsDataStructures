@@ -1,4 +1,4 @@
-package main.java.algorithms.graph.DijkstraPriorityQueue;
+package algorithms.graph.DijkstraPriorityQueue;
 
 import java.util.ArrayList;
 import java.util.List;

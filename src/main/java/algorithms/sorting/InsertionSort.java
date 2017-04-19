@@ -1,4 +1,4 @@
-package main.java.algorithms.sorting;
+package algorithms.sorting;
 
 /**
  * Created by Oscar on 08/04/2017.

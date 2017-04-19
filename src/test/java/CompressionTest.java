@@ -1,12 +1,11 @@
-package test.java;
-
-import main.java.algorithms.compression.LZW;
+import algorithms.compression.LZW;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 /**
  * Created by Oscar on 17/04/2017.

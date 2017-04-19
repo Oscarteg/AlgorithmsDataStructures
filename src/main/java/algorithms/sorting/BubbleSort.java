@@ -1,6 +1,7 @@
-package main.java.algorithms.sorting;
+package algorithms.sorting;
 
-import main.java.utils.SwapElementInArray;
+
+import utils.SwapElementInArray;
 
 /**
  * Created by Oscar on 08/04/2017.

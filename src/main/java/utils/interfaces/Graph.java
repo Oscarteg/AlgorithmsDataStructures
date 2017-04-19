@@ -1,4 +1,4 @@
-package main.java.utils.interfaces;
+package utils.interfaces;
 
 import java.util.Set;
 

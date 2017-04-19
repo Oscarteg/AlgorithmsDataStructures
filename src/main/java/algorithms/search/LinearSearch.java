@@ -1,4 +1,4 @@
-package main.java.algorithms.search;
+package algorithms.search;
 
 /**
  * Created by Oscar on 08/04/2017.
