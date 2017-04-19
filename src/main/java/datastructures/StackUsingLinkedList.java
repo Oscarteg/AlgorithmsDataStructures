@@ -1,6 +1,8 @@
 package datastructures;
 
-import main.java.utils.interfaces.Stack;
+import datastructures.LinkedListWithIterator.DoubleLinkedList;
+import utils.interfaces.Stack;
+
 
 /**
  * Created by Oscar on 08/04/2017.
